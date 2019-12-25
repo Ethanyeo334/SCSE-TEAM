@@ -1,0 +1,39 @@
+$(document).ready(function() {
+	$('.navbar li a').mouseenter(function(){									// for home page button fading
+		$(this).css('background-color', 'rgba(51, 102, 153, 0.6)');
+	});
+	$('.navbar li a').mouseleave(function(){									// when mouse cursor is not hovering over the home page buttons
+		$(this).css('background-color', 'rgba(51, 102, 153, 0)');
+	});	
+	$('.changestuff li a').mouseenter(function(){									// for home page button fading
+		$(this).css('background-color', 'rgba(51, 102, 153, 0.6)');
+	});
+	$('.changestuff li a').mouseleave(function(){									// when mouse cursor is not hovering over the home page buttons
+		$(this).css('background-color', 'rgba(51, 102, 153, 0)');
+	});
+		
+	$('#homeButton').mouseenter(function(){										// fade for home button
+		$(this).css('background-color', 'rgba(51, 102, 153, 1)');
+	});
+	$('#homeButton').mouseleave(function(){
+		$(this).css('background-color', 'rgba(51, 102, 153, 0.6)');
+	});	
+	$('#toTop').mouseenter(function(){											// fade for top arrow button
+		$(this).css('background-color', 'rgba(51, 102, 153, 1)');
+	});
+	$('#toTop').mouseleave(function(){
+		$(this).css('background-color', 'rgba(51, 102, 153, 0.6)');
+	});
+	
+	$(window).scroll(function() {												// for fading the arrow button into and out of existance ooOoOO magic
+		if ($(this).scrollTop() > 50) {											// if the window is 50px from the top of the page
+			$('#toTop').fadeIn(400);			
+		} else {																// if window is not more than 50px from the top of the page
+			$('#toTop').fadeOut(400);
+		}
+	});
+	$('#toTop').click(function () {												// when the user clicks the "return to top" button
+		$('html, body').animate({ scrollTop: 0 }, 500);							// it animates it so the page smoothly goes back to the top
+		return false;
+	});
+});	
